@@ -1,0 +1,23 @@
+.container {
+    width: 70%;
+    margin: auto;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+}
+
+.product-list li {
+    width: calc(100% / 3);
+    border: 2px solid coral;
+    background-color: orange;
+    margin: .5rem;
+    padding: .5rem;
+}
+
+.carrello {
+    display: flex;
+    justify-content: space-around;
+    background-color: lightgray;
+}
