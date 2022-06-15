@@ -13,7 +13,7 @@ trait Indirizzi {
     }
 
     public function getAddress() {
-        return "$this->via $this->nCivico <br> $this->città <br> $this->cap";
+        return "$this->nome <br> $this->via <br> $this->nCivico <br> $this->città <br> $this->cap";
     }
 }
 ?>

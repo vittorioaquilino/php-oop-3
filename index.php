@@ -49,7 +49,7 @@ $azienda = new Azienda("Aquilino s.r.l.", 1122334455, "Via del Mare", "7", "Roma
 
     <h3>Azienda:</h3>
     <?php echo $azienda->getAddress()?>
-    <h3>Prodotti disponibili</h3>
+    <h3>Prodotti disponibili:</h3>
     <div class="container">
         <ul class="product-list">
             <li><?php echo $ciboGatti->getName()?></li>

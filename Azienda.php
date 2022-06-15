@@ -10,10 +10,11 @@ class Azienda {
     function __construct($_nome, $_pIva){
         $this->nome = $_nome;
         $this->pIva = $_pIva;
+        $this->via = "Via del mare";
+        $this->nCivico = "7";
+        $this->città = "Roma";
+        $this->cap = "71029";
     }
 
-    public function getAddress() {
-        return "Azienda: $this->nome <br> P.IVA: $this->pIva <br> $this->via $this->nCivico <br> $this->città <br> $this->cap";
-    }
 }
 ?>
