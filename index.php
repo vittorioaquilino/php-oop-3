@@ -14,21 +14,26 @@ require_once __DIR__ . "/Cibo.php";
 require_once __DIR__ . "/Attrezzi.php";
 require_once __DIR__ . "/Giochi.php";
 require_once __DIR__ . "/Utente.php";
+require_once __DIR__ . "/Azienda.php";
 
 // instanze prodotti
 $ciboGatti = new Cibo ("cibo in scatola", "98123", "cibo in scatola per gatti di alta qualità", "GATTI", 25, "12/12/2022");
-var_dump($ciboGatti);
+// var_dump($ciboGatti);
 $attrezzi = new Attrezzi ("collare", "98456", "collare per cani di taglia media", "CANI", 30, "Luxpets");
-var_dump($attrezzi);
+// var_dump($attrezzi);
 $giochi = new Giochi ("boomerang", "98765", "boomerang per cani", "CANI", 15, "Amazon");
-var_dump($giochi);
+// var_dump($giochi);
 ?>
 
 <!-- instanza utente -->
 <?php
 $Vittorio = new Utente("Vittorio", "Aquilino", 5555000111222333, true, true);
-$Vittorio->addToShop($ciboGatti);
-var_dump($Vittorio);
+//$Vittorio->addToShop($ciboGatti);
+// var_dump($Vittorio);
+
+// instanza azienda
+$azienda = new Azienda("Aquilino s.r.l.", 1122334455, "Via del Mare", "7", "Roma", "70020");
+
 ?>
 
 <!DOCTYPE html>
@@ -42,6 +47,8 @@ var_dump($Vittorio);
 </head>
 <body>
 
+    <h3>Azienda:</h3>
+    <?php echo $azienda->getAddress()?>
     <h3>Prodotti disponibili</h3>
     <div class="container">
         <ul class="product-list">
@@ -50,7 +57,13 @@ var_dump($Vittorio);
             <li><?php echo $giochi->getName()?></li>
         </ul>
     </div>
-
+        <?php 
+            try {
+                $Vittorio->addToShop("prodotto");
+            } catch (Exception $e){
+                echo $e->getMessage();
+            }
+        ?>
     <h3><?php echo $Vittorio->nomeUtente ?> ecco il tuo carrello:</h3>
     <div class="carrello">
         <ul>

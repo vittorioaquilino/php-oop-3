@@ -17,11 +17,10 @@ class Utente {
     }
 
     public function addToShop($_prodotto) {
-        if($this->validitàCarta) {
-            $this->aggiungiProd[] = $_prodotto;
-            return true;
+        if(get_parent_class($_prodotto) === "prodotto") {
+          $this->aggiungiProd[] = $_prodotto;
         } else {
-            return false;
+          throw new Exception("Attenzione controlla cosa stai aggiungendo al carrello");
         }
     }
 
