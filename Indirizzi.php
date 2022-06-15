@@ -5,15 +5,10 @@ trait Indirizzi {
     public $città;
     public $cap;
 
-    function __construct($_via, $_nCivico, $_città, $_cap) {
-        $this->via = $_via;
-        $this->nCivico = $_nCivico;
-        $this->città = $_città;
-        $this->cap = $_cap;
-    }
+    
 
     public function getAddress() {
-        return "$this->nome <br> $this->via <br> $this->nCivico <br> $this->città <br> $this->cap";
+        return "Azienda: $this->nome <br> P.IVA: $this->pIva <br> Indirizzo: $this->via $this->nCivico <br> Città: $this->città  $this->cap";
     }
 }
 ?>

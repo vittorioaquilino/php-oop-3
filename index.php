@@ -28,11 +28,10 @@ $giochi = new Giochi ("boomerang", "98765", "boomerang per cani", "CANI", 15, "A
 <!-- instanza utente -->
 <?php
 $Vittorio = new Utente("Vittorio", "Aquilino", 5555000111222333, true, true);
-//$Vittorio->addToShop($ciboGatti);
 // var_dump($Vittorio);
 
 // instanza azienda
-$azienda = new Azienda("Aquilino s.r.l.", 1122334455, "Via del Mare", "7", "Roma", "70020");
+$azienda = new Azienda("Aquilino s.r.l.", 1122334455, "Via del Fuoco", "7", "Roma", "70020");
 
 ?>
 
@@ -57,16 +56,18 @@ $azienda = new Azienda("Aquilino s.r.l.", 1122334455, "Via del Mare", "7", "Roma
             <li><?php echo $giochi->getName()?></li>
         </ul>
     </div>
-        <?php 
-            try {
-                $Vittorio->addToShop("prodotto");
-            } catch (Exception $e){
-                echo $e->getMessage();
-            }
-        ?>
     <h3><?php echo $Vittorio->nomeUtente ?> ecco il tuo carrello:</h3>
     <div class="carrello">
         <ul>
+            <li>
+            <?php 
+            try {
+                $Vittorio->addToShop($giochi);
+            } catch (Exception $e){
+                echo $e->getMessage();
+            }
+            ?>
+            </li>
             <?php foreach($Vittorio->aggiungiProd as $item) { ?>
                 <li><?php echo $item->getName() ?></li>
             <?php } ?>

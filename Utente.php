@@ -17,7 +17,7 @@ class Utente {
     }
 
     public function addToShop($_prodotto) {
-        if(get_parent_class($_prodotto) === "prodotto") {
+        if(get_parent_class($_prodotto) === "Prodotti") {
           $this->aggiungiProd[] = $_prodotto;
         } else {
           throw new Exception("Attenzione controlla cosa stai aggiungendo al carrello");
